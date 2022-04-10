@@ -70,27 +70,63 @@ header nav ul li a {
     background-size: cover;
     background-position: center;
     display: flex;
-    justify-content: flex-end;
     flex-wrap: wrap;
-    align-items: flex-start;
+    justify-content: flex-end;
     padding: 50px;
 }
 .hero h2 {
     margin: auto 0;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .hero p {
-    padding: 8px;
-    margin: auto 0;
+    padding: 0px;
+    margin-top: 0;
     background: var(--tertiary-color);
     font-size: 20px;
     font-weight: bold;
     border-radius: 1px;
 }
-section {
+
+.justice {
+    margin: 5px 5px 5px 5px;
+    padding: 5px;
+    border: 5px solid var(--tertiary-color);
 }
 
-section p {
-
+#all-about-me, #contact-info {
+    align-items: center;
+    top: 0;
 }
+
+#about-me, #work, #contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 25px;
+    background-color: var(--secondary-color);
+    border-right: 3px solid var(--primary-color);
+    text-align: center;
+    font-size: 26px;
+    width: 25%;
+}
+
+.content {
+    flex: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 0;
+} 
+
+#bio, #contact-info{
+    width: 70%;
+    margin-left: auto;
+    margin-top: 5;
+}
+    
