@@ -23,7 +23,11 @@ header {
 	background-color: var(--primary-color);
 	padding: 10px 0 15px 0;
 } 
-
+.container {
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+}
 .box-1 {
 	background-color: var(--secondary-color);
 	width: fit-content;
@@ -32,7 +36,25 @@ header {
 .box-2 {
 	display: flex;
 	justify-content: flex-end;
-	padding: 5px 10px 0 0;
+}
+
+a::after {
+	content: "";
+	position: absolute;
+	height: auto;
+	width: 100%;
+	left: 0;
+	bottom: 0px;
+	background-color: var(--tertiary-color);
+	z-index: -10;
+	transition: height 0.2;
+}
+a:hover {
+	color: var(--primary-color);
+}
+a:hover::before {
+	height: 100%;
+	border-radius: 3px;
 }
 
 header h1 a {
@@ -61,21 +83,6 @@ header nav ul li a {
 	border-bottom: 3px solid var(--secondary-color);
 }
 
-.header-links ul li a::before {
-	position: absolute;
-	width: 100%;
-	height: 0%;
-	left: 0;
-	bottom: 0px;
-	background-color: var(--secondary-color);
-	z-index: -10;
-	transition: height 0.2s;
-}
-
-.header-links ul li a:hover::before {
-	height: 100%;
-	border-radius: 3px;
-} 
 
 .hero {
 	position: relative;
@@ -120,7 +127,6 @@ main {
 }
 
 .section-title {
-	font-size: 25px;
 	text-align: right;
 	width: 20%;
 	border-right: 5px solid;
@@ -294,7 +300,6 @@ footer {
 @media screen and (max-width: 980px) {
 	/* Header section  */
 	header h1 a {
-		font-size: 30px;
 		padding-left: 20px;
 	}
 
@@ -303,7 +308,6 @@ footer {
 	}
 
 	header nav ul li a {
-		font-size: 16px;
 		border-bottom: 2px solid;
 	}
 	/* Hero section  */
