@@ -7,7 +7,6 @@
 
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -21,33 +20,32 @@ body {
 /*header section*/
 
 header {
-	display: flex;
-	justify-content: space-between;
 	background-color: var(--primary-color);
-	padding: 5px 0 10px 0;
-}
-header div {
+	padding: 10px 0 15px 0;
+} 
+
+.box-1 {
 	background-color: var(--secondary-color);
+	width: fit-content;
+}
+
+.box-2 {
+	display: flex;
+	justify-content: flex-end;
+	padding: 5px 10px 0 0;
 }
 
 header h1 a {
 	font-size: 50px;
-	padding: 0px 10px 0px 100px;
 	color: var(--primary-color);
 	text-decoration: none;
 	letter-spacing: 1px;
 	font-weight: lighter;
 }
 
-nav {
-    display: flex;
-	justify-content: space-between;
-	margin-right: 10px;
-}
-
 header nav ul {
     display: flex;
-	align-items: center;
+	align-items: left;
 }
 
 header nav ul li {
@@ -55,15 +53,29 @@ header nav ul li {
     margin: 0 5px;
 }
 
-header nav a {
-	position: relative;
+header nav ul li a {
 	text-decoration: none;
 	color: var(--secondary-color);
 	font-size: 20px;
 	padding: 2px 5px;
 	border-bottom: 3px solid var(--secondary-color);
-	transition: color 0.2s;
 }
+
+.header-links ul li a::before {
+	position: absolute;
+	width: 100%;
+	height: 0%;
+	left: 0;
+	bottom: 0px;
+	background-color: var(--secondary-color);
+	z-index: -10;
+	transition: height 0.2s;
+}
+
+.header-links ul li a:hover::before {
+	height: 100%;
+	border-radius: 3px;
+} 
 
 .hero {
 	position: relative;
@@ -152,6 +164,7 @@ main {
 	margin: 10px;
 	overflow: hidden;
 	color: var(--primary-color);
+	z-index: -2;
 }
 
 .project-container a {
@@ -159,16 +172,8 @@ main {
 }
 
 
-
-
-/* background images */
-
-.run-buddy {
-	background: url("/assets/images/run-buddy.png");
-}
-
 /* project h2 and hover effect */
-.inner-container {
+.inner-container:hover {
 	position: absolute;
 	bottom: 20px;
 	padding: 5px;
@@ -179,12 +184,15 @@ main {
 .inner-container h3 {
 	font-size: 20px;
 }
+
+.project-container img {
+	display: flex
+}
 .boxes {
 	position: absolute;
 	content: "";
 	width: 100%;
 	height: 100%;
-	background-color: var(--tertiary-color);
 	top: 0;
 	left: 0;
 	right: 0%;
@@ -387,9 +395,6 @@ footer {
 		padding: 0;
 	}
 
-	header div {
-		align-self: start;
-	}
 
 	nav {
 		margin: 10px;
@@ -398,6 +403,13 @@ footer {
 	header h1 {
 		font-size: 25px;
 	}
+
+	.box-1 {
+		width: 100%;
+		text-align: center;
+	}
+	
+
 	/* hero section  */
 
 	.hero {
@@ -408,7 +420,7 @@ footer {
 	.hero div {
 		float: right;
 		position: right;
-		justify-content: flex-end;
+		justify-content: flex;
 		bottom: 10px;
 		opacity: 0.8;
 		text-align: center;
@@ -444,7 +456,7 @@ footer {
 	}
 
 	.section-title {
-		width: auto;
+		width: 90%;
 		text-align: left;
 		border-bottom: 2px solid;
 		border-right: none;
@@ -455,7 +467,6 @@ footer {
 	footer {
 		align-items: center;
 		padding: 0;
-		margin: 30px 0px;
 	}
 
 	.section-title h2 {
@@ -463,7 +474,7 @@ footer {
 	}
 
 	.bio {
-		text-align: center;
+		text-align: left;
 		padding: 0;
 		margin: 0;
 	}
@@ -516,8 +527,10 @@ footer {
 
 @media screen and (max-width: 575px) {
 	/* header section  */
-	nav {
-		width: 80vw;
+
+	.box-1 {
+		width: 100%;
+		text-align: center;
 	}
 
 	nav ul {
@@ -550,5 +563,9 @@ footer {
 	.refactor,
 	.TBD  {
 		height: 100px;
+	}
+	/* footer */
+	.footer-links ul {
+		flex-direction: column;
 	}
 }
