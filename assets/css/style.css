@@ -170,7 +170,12 @@ a:hover::before {
 	margin: 10px;
 	overflow: hidden;
 	color: var(--primary-color);
-	z-index: -2;
+}
+.project-container img {
+	justify-content: center;
+	align-self: center;
+	max-width: 100%;
+	max-height: fit-content;
 }
 
 .project-container a {
@@ -201,13 +206,7 @@ a:hover::before {
 	font-size: 20px;
 }
 
-.project-container img {
-	justify-content: center;
-	align-self: center;
-	max-width: 100%;
-	max-height: fit-content;
-}
-.gradient {
+.boxes {
 	position: absolute;
 	content: "";
 	width: 100%;
@@ -219,7 +218,7 @@ a:hover::before {
 	right: 0%;
 	bottom: 0;
 }
-.gradient:hover {
+.boxes:hover {
 	background-color: rgba(0, 0, 0, 0.349);
 }
 
