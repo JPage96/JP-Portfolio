@@ -22,7 +22,7 @@ body {
 header {
 	background-color: var(--primary-color);
 	padding: 10px 0 15px 0;
-} 
+}
 
 header h1 a {
 	font-size: 50px;
@@ -63,6 +63,7 @@ header nav ul li a {
 .box-2 {
 	display: flex;
 	justify-content: flex-end;
+	margin-right: 5px;
 }
 
 /*hover effect*/
@@ -86,6 +87,8 @@ a:hover::before {
 	border-radius: 3px;
 }
 
+/* Hero Section*/
+
 .hero {
 	position: relative;
 	/* background-image:  */
@@ -97,7 +100,7 @@ a:hover::before {
 	overflow: hidden;
 }
 
-.hero div {
+.hero-box {
 	position: absolute;
 	float: right;
 	padding: 10px;
@@ -108,9 +111,14 @@ a:hover::before {
 	right: 10px;
 }
 
-.hero img {
+.heroimg {
 	width: 100%;
     display: flex;
+}
+.myimg {
+	display: flex;
+	position: absolute;
+	z-index: -9999;
 }
 
 /* main section */
@@ -138,7 +146,7 @@ a:hover::before {
 }
 
 .about-section .bio {
-	margin: 10px;
+	margin: 10px 0 0 0;
 	width: 75%;
     font-size: 12px;
 }
@@ -167,7 +175,7 @@ a:hover::before {
 
 .project-container a {
 	border: 5px solid var(--secondary-color);
-	margin: 10px;
+	margin: 10px 0 10px 0;
 	overflow: hidden;
 	color: var(--primary-color);
 }
@@ -182,7 +190,7 @@ a:hover::before {
 	box-shadow: 4px 4px 4px rgb(70, 70, 70);
 }
 
-/* project h2 and hover effect */
+/* container */
 .inner-container:hover {
 	position: absolute;
 	bottom: 20px;
@@ -222,7 +230,6 @@ a:hover::before {
 	background-color: rgba(0, 0, 0, 0.349);
 }
 
-/* projects  */
 .run-buddy {
 	position: relative;
 	width: 100%;
@@ -237,7 +244,7 @@ a:hover::before {
 	height: 200px;
 }
 
-/* contact section  */
+/* contact and footer section  */
 
 .contact-section {
 	display: flex;
@@ -310,17 +317,12 @@ footer {
 } 
 
 /* media queries for screen sizes */
-/* screen <= 980px  */
 @media screen and (max-width: 980px) {
 	/* Header section  */
-	header h1 a {
-		padding-left: 20px;
+	header h1 {
+		margin: 10px 0 10px 0;
+		font-size: 40px;
 	}
-
-	header nav {
-		margin-right: 20px;
-	}
-
 	header nav ul li a {
 		border-bottom: 2px solid;
 	}
@@ -330,6 +332,7 @@ footer {
 		width: 100%;
 		height: auto;
 	}
+	
 	.hero div h2 {
 		font-size: 25px;
 	}
@@ -414,11 +417,7 @@ footer {
 	}
 
 	header h1 {
-		font-size: 30px;
-	}
-
-	header .box-2 {
-		font-size: 20px;
+		font-size: 40px;
 	}
 	
 	.container {
@@ -497,9 +496,6 @@ footer {
 	}
 
 	/* work section  */
-	.project-frame img {
-		width: 100%;
-	}
 
 	.run-buddy {
 		height: 150px;
@@ -536,13 +532,13 @@ footer {
 	}
 }
 
-@media screen and (max-device-width: 575px) {
+@media screen and (max-width: 575px) {
 	/* header section  */
 	.hero div { 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 }
 	.box-1 {
 		width: 100%;
@@ -555,6 +551,11 @@ footer {
 	}
 
 	/* hero section  */
+	.hero-box {
+		display: block;
+		justify-content: center;
+		align-items: center;
+	}
 
 	/* about section  */
 	.about-section p {
