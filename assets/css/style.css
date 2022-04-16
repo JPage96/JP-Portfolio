@@ -23,39 +23,6 @@ header {
 	background-color: var(--primary-color);
 	padding: 10px 0 15px 0;
 } 
-.container {
-	display:flex;
-	justify-content: space-between;
-	align-items: center;
-}
-.box-1 {
-	background-color: var(--secondary-color);
-	width: fit-content;
-}
-
-.box-2 {
-	display: flex;
-	justify-content: flex-end;
-}
-
-a::after {
-	content: "";
-	position: absolute;
-	height: auto;
-	width: 100%;
-	left: 0;
-	bottom: 0px;
-	background-color: var(--tertiary-color);
-	z-index: -10;
-	transition: height 0.2;
-}
-a:hover {
-	color: var(--primary-color);
-}
-a:hover::before {
-	height: 100%;
-	border-radius: 3px;
-}
 
 header h1 a {
 	font-size: 50px;
@@ -83,6 +50,41 @@ header nav ul li a {
 	border-bottom: 3px solid var(--secondary-color);
 }
 
+.container {
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.box-1 {
+	background-color: var(--secondary-color);
+	width: fit-content;
+}
+
+.box-2 {
+	display: flex;
+	justify-content: flex-end;
+}
+
+/*hover effect*/
+
+a::after {
+	content: "";
+	position: absolute;
+	height: auto;
+	width: 100%;
+	left: 0;
+	bottom: 0px;
+	background-color: var(--tertiary-color);
+	z-index: -10;
+	transition: height 0.2;
+}
+a:hover {
+	color: var(--tertiary-color);
+}
+a:hover::before {
+	height: 100%;
+	border-radius: 3px;
+}
 
 .hero {
 	position: relative;
@@ -111,10 +113,7 @@ header nav ul li a {
     display: flex;
 }
 
-/* main section  */
-main {
-	padding: 10px 50px;
-}
+/* main section */
 
 /* about section  */
 .about-section {
@@ -163,6 +162,7 @@ main {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	width: 100%;
+	height: fit-content;
 }
 
 .project-container a {
@@ -177,35 +177,50 @@ main {
 	box-shadow: 4px 4px 4px rgb(70, 70, 70);
 }
 
-
 /* project h2 and hover effect */
 .inner-container:hover {
 	position: absolute;
 	bottom: 20px;
 	padding: 5px;
 	border-radius: 0px 10px 0px 0px;
-	background-color: var(--secondary-color);
+	background-color: var(--tertiary-color);
 	box-shadow: 3px 3px 10px rgb(48, 48, 48);
 }
+
+.inner-container {
+	position: absolute;
+	z-index: 40;
+	bottom: 20px;
+	padding: 5px;
+	border-radius: 0px 10px 0px 0px;
+	background-color: var(--tertiary-color);
+	box-shadow: 3px 3px 10px rgb(48, 48, 48);
+}
+
 .inner-container h3 {
 	font-size: 20px;
 }
 
 .project-container img {
-	display: flex
+	justify-content: center;
+	align-self: center;
+	max-width: 100%;
+	max-height: fit-content;
 }
-.boxes {
+.gradient {
 	position: absolute;
 	content: "";
 	width: 100%;
 	height: 100%;
+	background-color: rgba(0, 0, 0, 0.062);
+	z-index: 20;
 	top: 0;
 	left: 0;
 	right: 0%;
 	bottom: 0;
 }
-.boxes:hover {
-	background-color: var(--primary-color);
+.gradient:hover {
+	background-color: rgba(0, 0, 0, 0.349);
 }
 
 /* projects  */
@@ -336,11 +351,6 @@ footer {
 		font-size: 30px;
 	}
 
-	.about-section .bio {
-		margin: 10px;
-		width: 75%;
-		line-height: 1.5;
-	}
 
 	/* work section  */
 	.work-section h2 {
@@ -405,14 +415,23 @@ footer {
 	}
 
 	header h1 {
-		font-size: 25px;
+		font-size: 30px;
+	}
+
+	header .box-2 {
+		font-size: 20px;
+	}
+	
+	.container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
 	}
 
 	.box-1 {
 		width: 100%;
 		text-align: center;
 	}
-	
 
 	/* hero section  */
 
@@ -423,17 +442,14 @@ footer {
 
 	.hero div {
 		float: right;
-		position: right;
-		justify-content: flex;
 		bottom: 10px;
-		opacity: 0.8;
 		text-align: center;
 		max-width: 30%;
 	}
 
 	.hero img {
-		width: 100%;
 		display: flex;
+		justify-content: center;
 	}
 
 	.hero div h2 {
@@ -453,17 +469,16 @@ footer {
 		justify-content: center;
 	}
 
-	.hero,
-	footer,
-	.work-section {
-		padding: 10px;
-	}
-
 	.section-title {
 		width: 90%;
 		text-align: left;
 		border-bottom: 2px solid;
 		border-right: none;
+	}
+	
+	.section-title h2, .bio {
+		display: flex;
+		justify-content: left;
 	}
 
 	.about-section,
@@ -473,19 +488,12 @@ footer {
 		padding: 0;
 	}
 
-	.section-title h2 {
-		text-align: center;
-	}
-
-	.bio {
-		text-align: left;
-		padding: 0;
-		margin: 0;
-	}
-
 	.about-section p {
+		display: flex;
+		justify-content: left;
+		align-items: stretch;
 		margin: 0;
-		padding: 10px 0px;
+		padding: 0px 0px;
 		line-height: 1.5;
 	}
 
@@ -529,9 +537,14 @@ footer {
 	}
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-device-width: 575px) {
 	/* header section  */
-
+	.hero div { 
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
 	.box-1 {
 		width: 100%;
 		text-align: center;
@@ -540,10 +553,6 @@ footer {
 	nav ul {
 		flex-wrap: wrap;
 		justify-content: center;
-	}
-
-	nav ul li {
-		padding: 3px;
 	}
 
 	/* hero section  */
