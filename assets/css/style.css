@@ -115,11 +115,6 @@ a:hover::before {
 	width: 100%;
     display: flex;
 }
-.myimg {
-	display: flex;
-	position: absolute;
-	z-index: -9999;
-}
 
 /* main section */
 
@@ -333,6 +328,11 @@ footer {
 		height: auto;
 	}
 	
+	.hero div {
+		position: absolute;
+		float: center;
+	}
+	
 	.hero div h2 {
 		font-size: 25px;
 	}
@@ -438,7 +438,8 @@ footer {
 		position: relative;
 	}
 
-	.hero div {
+	.hero-box {
+		position: absolute;
 		float: right;
 		bottom: 10px;
 		text-align: center;
@@ -448,6 +449,8 @@ footer {
 	.hero img {
 		display: flex;
 		justify-content: center;
+		width: auto;
+		height: 150px;
 	}
 
 	.hero div h2 {
@@ -580,5 +583,6 @@ footer {
 	/* footer */
 	.footer-links ul {
 		flex-direction: column;
+		align-items: baseline;
 	}
 }
