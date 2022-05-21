@@ -231,7 +231,7 @@ a:hover::before {
 	height: 500px;
 }
 
-.fav-things,
+.beer-me,
 .refactor,
 .TBD {
 	position: relative;
@@ -363,7 +363,7 @@ footer {
 		border-width: 1px;
 	}
 
-	.fav-things,
+	.beer-me,
 	.refactor,
 	.TBD  {
 		border: 2px solid;
@@ -375,7 +375,7 @@ footer {
 		background-position: center bottom;
 	}
 
-	.fav-things,
+	.beer-me,
 	.refactor,
 	.TBD  {
 		width: 45%;
@@ -504,7 +504,7 @@ footer {
 		height: 150px;
 	}
 
-	.fav-things,
+	.beer-me,
 	.refactor,
 	.TBD  {
 		height: 100px;
@@ -575,7 +575,7 @@ footer {
 		height: 100px;
 	}
 
-	.fav-things,
+	.beer-me,
 	.refactor,
 	.TBD  {
 		height: 100px;
